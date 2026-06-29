@@ -21,7 +21,7 @@ import time
 import logging
 
 from logging.handlers import RotatingFileHandler
-from flask import Flask, request, send_from_directory
+from flask import Flask, request, send_from_directory, render_template
 from werkzeug.utils import secure_filename
 
 from config import Config
@@ -159,20 +159,20 @@ def create_app() -> Flask:
     @app.route("/", methods=["GET"])
     def index():
         """
-        Root endpoint — quick confirmation the server is alive.
-
-        Returns:
-            200 JSON with project identity and running status.
+        Root endpoint — renders the homepage UI template.
         """
-        return success_response(
-            message="AI Resume Analyzer is running.",
-            data={
-                "status":    "running",
-                "project":   Config.APP_NAME,
-                "developer": Config.AUTHOR,
-                "version":   Config.VERSION,
-            },
-        )
+        return render_template("index.html")
+
+    # -----------------------------------------------------------------------
+    # Route 1b — Web UI Resume Upload Page  GET /upload
+    # -----------------------------------------------------------------------
+
+    @app.route("/upload", methods=["GET"])
+    def upload_page():
+        """
+        Renders the resume upload page UI template.
+        """
+        return render_template("upload.html")
 
     # -----------------------------------------------------------------------
     # Route 2 — API Information  GET /api
@@ -441,6 +441,38 @@ def create_app() -> Flask:
         without modification. Both routes call identical logic.
         """
         return _run_analysis_pipeline()
+
+    # -----------------------------------------------------------------------
+    # Route 5b — Web UI Analysis Handler  POST /analyze
+    # -----------------------------------------------------------------------
+
+    @app.route("/analyze", methods=["POST"])
+    def analyze_ui():
+        """
+        Web UI endpoint for analyzing resume.
+        Saves the file, runs the AI analysis pipeline, and renders
+        the dynamic result page or redirects with an error.
+        """
+        res, status_code = _run_analysis_pipeline()
+
+        # If not successful or has error status, render upload.html with error
+        if status_code != 200:
+            err_data = res.get_json()
+            error_message = err_data.get("message", "An error occurred during analysis.")
+            return render_template("upload.html", error=error_message)
+
+        # If successful, extract the analysis payload and render result.html
+        res_data = res.get_json()
+        payload = res_data.get("data", {})
+        analysis_data = payload.get("analysis", {})
+        report_data = payload.get("report", {})
+        download_url = report_data.get("download_url", "")
+
+        return render_template(
+            "result.html",
+            analysis=analysis_data,
+            download_url=download_url
+        )
 
     # -----------------------------------------------------------------------
     # Shared report download logic
