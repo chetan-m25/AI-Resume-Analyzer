@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}AI Resume Analyzer{% endblock %}</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon (Optional) -->
+    <!--
+    <link rel="icon" href="{{ url_for('static', filename='images/logo.png') }}">
+    -->
+
+</head>
+<body>
+
+    <!-- Background Animation -->
+    <div class="background"></div>
+
+    <!-- Header -->
+    <header class="navbar">
+
+        <div class="logo">
+
+            <span class="logo-icon">📄</span>
+
+            <h2>AI Resume Analyzer</h2>
+
+        </div>
+
+    </header>
+
+
+    <!-- Main Content -->
+    <main>
+
+        {% block content %}
+
+        {% endblock %}
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 AI Resume Analyzer | Built by
+            <strong>Chetan</strong> & <strong>Rajkumar</strong>
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>

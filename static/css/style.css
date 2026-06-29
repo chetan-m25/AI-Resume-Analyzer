@@ -1,0 +1,498 @@
+/* ===========================
+   Google Font & Reset
+=========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #eef4ff, #f8fafc);
+    color: #1e293b;
+    min-height: 100vh;
+}
+
+/* ===========================
+   Background
+=========================== */
+
+.background {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at top right, #dbeafe, transparent 40%);
+    z-index: -1;
+}
+
+/* ===========================
+   Navbar
+=========================== */
+
+.navbar {
+    width: 100%;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    font-size: 30px;
+}
+
+.logo h2 {
+    color: #2563eb;
+    font-size: 28px;
+}
+
+/* ===========================
+   Hero Section
+=========================== */
+
+.hero {
+    text-align: center;
+    padding: 50px 20px 30px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    color: #2563eb;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    max-width: 750px;
+    margin: auto;
+    line-height: 1.8;
+    color: #475569;
+    font-size: 17px;
+}
+
+/* ===========================
+   Upload Card
+=========================== */
+
+.upload-section {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.upload-card {
+    width: 100%;
+    max-width: 720px;
+
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(12px);
+
+    border-radius: 20px;
+
+    padding: 35px;
+
+    box-shadow: 0 20px 45px rgba(0,0,0,0.08);
+}
+
+/* ===========================
+   Drag & Drop Area
+=========================== */
+
+.drop-area {
+
+    border: 3px dashed #2563eb;
+
+    border-radius: 18px;
+
+    padding: 55px 30px;
+
+    text-align: center;
+
+    transition: .3s;
+}
+
+.drop-area:hover {
+    background: #eff6ff;
+    border-color: #1d4ed8;
+}
+
+.upload-icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.drop-area h2 {
+    margin-bottom: 12px;
+    color: #1e293b;
+}
+
+.drop-area p {
+    color: #64748b;
+}
+
+.choose-btn {
+
+    display: inline-block;
+
+    margin-top: 18px;
+
+    padding: 12px 28px;
+
+    background: #2563eb;
+
+    color: white;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.choose-btn:hover {
+    background: #1d4ed8;
+}
+
+.file-name {
+    margin-top: 18px;
+    font-weight: 500;
+    color: #2563eb;
+}
+
+small {
+    display: block;
+    margin-top: 12px;
+    color: #64748b;
+}
+
+/* ===========================
+   Analyze Button
+=========================== */
+
+.analyze-btn {
+
+    width: 100%;
+
+    margin-top: 28px;
+
+    padding: 16px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.analyze-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+/* ===========================
+   Loading Screen
+=========================== */
+
+.loading-screen {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(255,255,255,.95);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    z-index: 999;
+}
+
+.hidden {
+    display: none;
+}
+
+.loader {
+
+    width: 70px;
+
+    height: 70px;
+
+    border: 6px solid #dbeafe;
+
+    border-top: 6px solid #2563eb;
+
+    border-radius: 50%;
+
+    animation: spin 1s linear infinite;
+
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+
+    100%{
+        transform: rotate(360deg);
+    }
+
+}
+
+/* ===========================
+   Footer
+=========================== */
+
+footer {
+
+    text-align: center;
+
+    margin: 50px 0 20px;
+
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:32px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .upload-card{
+        padding:25px;
+    }
+
+    .drop-area{
+        padding:40px 20px;
+    }
+
+}
+
+
+/* drag & drop */
+/* Drag Active Effect */
+
+.drag-active{
+
+    background:#dbeafe;
+
+    border-color:#1d4ed8;
+
+    transform:scale(1.02);
+
+}
+
+/* Smooth Animation */
+
+.drop-area{
+
+    transition:0.3s ease;
+
+}
+
+
+/* result page styles */
+
+/* ===========================
+   Result Page
+=========================== */
+
+.result-page{
+
+    width:90%;
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:40px 0;
+
+}
+
+.page-title{
+
+    text-align:center;
+
+    color:#2563eb;
+
+    margin-bottom:35px;
+
+}
+
+.score-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+
+    margin-bottom:35px;
+
+}
+
+.score-card{
+
+    background:white;
+
+    border-radius:15px;
+
+    padding:30px;
+
+    text-align:center;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.score-card h3{
+
+    color:#64748b;
+
+    margin-bottom:15px;
+
+}
+
+.score-card h2{
+
+    font-size:40px;
+
+    color:#2563eb;
+
+}
+
+.result-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:25px;
+
+}
+
+.card{
+
+    background:white;
+
+    border-radius:15px;
+
+    padding:25px;
+
+    box-shadow:0 10px 20px rgba(0,0,0,.08);
+
+}
+
+.card h2{
+
+    color:#2563eb;
+
+    margin-bottom:18px;
+
+}
+
+.card ul{
+
+    list-style:none;
+
+}
+
+.card ul li{
+
+    padding:10px 0;
+
+    border-bottom:1px solid #e2e8f0;
+
+}
+
+.summary-card{
+
+    margin-top:35px;
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:15px;
+
+    box-shadow:0 10px 20px rgba(0,0,0,.08);
+
+}
+
+.summary-card h2{
+
+    color:#2563eb;
+
+    margin-bottom:15px;
+
+}
+
+.summary-card p{
+
+    line-height:1.8;
+
+    color:#475569;
+
+}
+
+.download-section{
+
+    margin-top:35px;
+
+    text-align:center;
+
+}
+
+.download-btn{
+
+    display:inline-block;
+
+    padding:15px 35px;
+
+    background:#2563eb;
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:10px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.download-btn:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-3px);
+
+}
