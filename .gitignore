@@ -12,12 +12,6 @@ venv/
 logs/
 *.log
 
-# Uploaded Files
-uploads/*
-
-# Generated Reports
-reports/*
-
 # VS Code
 .vscode/
 
