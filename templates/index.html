@@ -1,0 +1,244 @@
+{% extends "layout.html" %} {% block title %} AI Resume Analyzer {% endblock %}
+{% block content %}
+
+<section class="hero">
+  <div class="hero-left">
+    <h1>
+      Analyze Your Resume
+
+      <span>Using Artificial Intelligence</span>
+    </h1>
+
+    <p>
+      Upload your resume and instantly receive an ATS score, resume score, skill
+      analysis, missing skills, strengths, weaknesses, and personalized AI
+      suggestions.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#upload" class="primary-btn"> Analyze Resume → </a>
+
+      <a href="#features" class="secondary-btn"> Learn More </a>
+    </div>
+
+    <div class="stats">
+      <div>
+        <h2>95%</h2>
+
+        <p>ATS Accuracy</p>
+      </div>
+
+      <div>
+        <h2>AI</h2>
+
+        <p>Gemini Powered</p>
+      </div>
+
+      <div>
+        <h2>PDF</h2>
+
+        <p>Resume Support</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <!--    
+
+            <div class="hero-card-header">
+
+                AI Resume Analysis
+
+            </div>
+
+            <div class="progress-box">
+
+                <span>Resume Score</span>
+
+                <div class="progress">
+
+                    <div class="progress-fill score-fill"></div>
+
+                </div>
+
+                <strong>92 / 100</strong>
+
+            </div>
+
+            <div class="progress-box">
+
+                <span>ATS Score</span>
+
+                <div class="progress">
+
+                    <div class="progress-fill ats-fill"></div>
+
+                </div>
+
+                <strong>88%</strong>
+
+            </div>
+
+            <div class="skills">
+
+                <span>Python</span>
+
+                <span>Flask</span>
+
+                <span>Git</span>
+
+                <span>SQL</span>
+
+            </div>
+
+        </div> -->
+  </div>
+</section>
+
+<!-- ============================= -->
+<!-- Features Section -->
+<!-- ============================= -->
+
+<section class="features" id="features">
+  <div class="section-title">
+    <span class="section-badge"> FEATURES </span>
+
+    <h2>
+      Everything You Need To Build
+      <span>A Better Resume</span>
+    </h2>
+
+    <p>
+      Our AI analyzes your resume in seconds and gives personalized insights to
+      improve your chances of getting shortlisted.
+    </p>
+  </div>
+
+  <div class="feature-grid">
+    <div class="feature-card">
+      <div class="feature-icon">📊</div>
+
+      <h3>Resume Score</h3>
+
+      <p>
+        Get an AI-generated resume score out of 100 based on overall quality.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">🎯</div>
+
+      <h3>ATS Checker</h3>
+
+      <p>Check whether your resume is ATS friendly before applying.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">💻</div>
+
+      <h3>Skills Analysis</h3>
+
+      <p>Detect technical and soft skills from your uploaded resume.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">💡</div>
+
+      <h3>AI Suggestions</h3>
+
+      <p>
+        Receive personalized recommendations to improve your resume instantly.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= -->
+<!-- Upload Section -->
+<!-- ========================= -->
+
+<section class="upload-section" id="upload">
+  <div class="upload-container">
+    <div class="upload-left">
+      <span class="section-badge"> START ANALYSIS </span>
+
+      <h2>Upload Your Resume</h2>
+
+      <p>
+        Upload your resume in PDF format and let our AI analyze your resume
+        within a few seconds.
+      </p>
+
+      <div class="upload-features">
+        <div class="upload-item">✅ PDF Format Only</div>
+
+        <div class="upload-item">⚡ Instant AI Analysis</div>
+
+        <div class="upload-item">🎯 ATS Compatibility Score</div>
+
+        <div class="upload-item">🔒 Secure File Upload</div>
+      </div>
+    </div>
+
+    <div class="upload-right">
+      <form
+        id="uploadForm"
+        action="/analyze"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <div id="dropArea" class="drop-area">
+          <div class="upload-cloud">☁️</div>
+
+          <h3>Drag & Drop Resume Here</h3>
+
+          <p>or</p>
+
+          <label for="resume" class="choose-btn"> Browse Files </label>
+
+          <input type="file" id="resume" name="resume" accept=".pdf" hidden />
+
+          <div id="fileName" class="file-name">No file selected</div>
+
+          <small> Supports PDF files up to 5 MB </small>
+        </div>
+
+        <button class="analyze-btn" type="submit">Analyze Resume →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================== -->
+<!-- Statistics Section -->
+<!-- ===================================== -->
+
+<section class="statistics">
+  <div class="stats-container">
+    <div class="stat-card">
+      <h2>1000+</h2>
+
+      <p>Resumes Analyzed</p>
+    </div>
+
+    <div class="stat-card">
+      <h2>95%</h2>
+
+      <p>ATS Accuracy</p>
+    </div>
+
+    <div class="stat-card">
+      <h2>24/7</h2>
+
+      <p>AI Availability</p>
+    </div>
+
+    <div class="stat-card">
+      <h2>Gemini</h2>
+
+      <p>Powered AI</p>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

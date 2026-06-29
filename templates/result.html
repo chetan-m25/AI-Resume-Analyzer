@@ -1,0 +1,96 @@
+{% extends "layout.html" %} {% block title %} Analysis Result {% endblock %} {%
+block content %}
+
+<section class="result-page">
+  <h1 class="page-title">Resume Analysis Report</h1>
+
+  <div class="score-grid">
+    <div class="score-card">
+      <h3>Resume Score</h3>
+      <h2>92/100</h2>
+    </div>
+
+    <div class="score-card">
+      <h3>ATS Score</h3>
+      <h2>88%</h2>
+    </div>
+  </div>
+
+  <div class="result-grid">
+    <div class="card">
+      <h2>Technical Skills</h2>
+
+      <ul>
+        <li>Python</li>
+        <li>Flask</li>
+        <li>SQL</li>
+        <li>Git</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Soft Skills</h2>
+
+      <ul>
+        <li>Communication</li>
+        <li>Problem Solving</li>
+        <li>Leadership</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Missing Skills</h2>
+
+      <ul>
+        <li>Docker</li>
+        <li>AWS</li>
+        <li>REST API</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Strengths</h2>
+
+      <ul>
+        <li>Good Project Experience</li>
+        <li>Clean Resume Format</li>
+        <li>Strong Programming Skills</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Weaknesses</h2>
+
+      <ul>
+        <li>No Certifications</li>
+        <li>Few Achievements</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Suggestions</h2>
+
+      <ul>
+        <li>Add measurable achievements.</li>
+        <li>Improve professional summary.</li>
+        <li>Add internship experience.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="summary-card">
+    <h2>Professional Summary</h2>
+
+    <p>
+      This resume demonstrates strong backend development skills with Python and
+      Flask. Adding certifications, Docker knowledge, and measurable
+      achievements will significantly improve the ATS score.
+    </p>
+  </div>
+
+  <div class="download-section">
+    <a href="/download-report" class="download-btn"> Download PDF Report </a>
+  </div>
+</section>
+
+{% endblock %}
