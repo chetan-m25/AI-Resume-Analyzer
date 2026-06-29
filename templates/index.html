@@ -16,7 +16,7 @@
     </p>
 
     <div class="hero-buttons">
-      <a href="#upload" class="primary-btn"> Analyze Resume → </a>
+      <a href="/upload" class="primary-btn"> Analyze Resume → </a>
 
       <a href="#features" class="secondary-btn"> Learn More </a>
     </div>
@@ -149,62 +149,6 @@
       <p>
         Receive personalized recommendations to improve your resume instantly.
       </p>
-    </div>
-  </div>
-</section>
-
-<!-- ========================= -->
-<!-- Upload Section -->
-<!-- ========================= -->
-
-<section class="upload-section" id="upload">
-  <div class="upload-container">
-    <div class="upload-left">
-      <span class="section-badge"> START ANALYSIS </span>
-
-      <h2>Upload Your Resume</h2>
-
-      <p>
-        Upload your resume in PDF format and let our AI analyze your resume
-        within a few seconds.
-      </p>
-
-      <div class="upload-features">
-        <div class="upload-item">✅ PDF Format Only</div>
-
-        <div class="upload-item">⚡ Instant AI Analysis</div>
-
-        <div class="upload-item">🎯 ATS Compatibility Score</div>
-
-        <div class="upload-item">🔒 Secure File Upload</div>
-      </div>
-    </div>
-
-    <div class="upload-right">
-      <form
-        id="uploadForm"
-        action="/analyze"
-        method="POST"
-        enctype="multipart/form-data"
-      >
-        <div id="dropArea" class="drop-area">
-          <div class="upload-cloud">☁️</div>
-
-          <h3>Drag & Drop Resume Here</h3>
-
-          <p>or</p>
-
-          <label for="resume" class="choose-btn"> Browse Files </label>
-
-          <input type="file" id="resume" name="resume" accept=".pdf" hidden />
-
-          <div id="fileName" class="file-name">No file selected</div>
-
-          <small> Supports PDF files up to 5 MB </small>
-        </div>
-
-        <button class="analyze-btn" type="submit">Analyze Resume →</button>
-      </form>
     </div>
   </div>
 </section>

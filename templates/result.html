@@ -1,5 +1,11 @@
-{% extends "layout.html" %} {% block title %} Analysis Result {% endblock %} {%
-block content %}
+{% extends "layout.html" %} 
+{% block title %} Analysis Result {% endblock %} 
+
+{% block nav_right %}
+<a href="/" class="nav-back-btn">Back to Home</a>
+{% endblock %}
+
+{% block content %}
 
 <section class="result-page">
   <h1 class="page-title">Resume Analysis Report</h1>
@@ -7,12 +13,12 @@ block content %}
   <div class="score-grid">
     <div class="score-card">
       <h3>Resume Score</h3>
-      <h2>92/100</h2>
+      <h2>{{ analysis.resume_score }}/100</h2>
     </div>
 
     <div class="score-card">
       <h3>ATS Score</h3>
-      <h2>88%</h2>
+      <h2>{{ analysis.ats_score }}%</h2>
     </div>
   </div>
 
@@ -21,10 +27,11 @@ block content %}
       <h2>Technical Skills</h2>
 
       <ul>
-        <li>Python</li>
-        <li>Flask</li>
-        <li>SQL</li>
-        <li>Git</li>
+        {% for skill in analysis.technical_skills %}
+        <li>{{ skill }}</li>
+        {% else %}
+        <li>None detected</li>
+        {% endfor %}
       </ul>
     </div>
 
@@ -32,9 +39,11 @@ block content %}
       <h2>Soft Skills</h2>
 
       <ul>
-        <li>Communication</li>
-        <li>Problem Solving</li>
-        <li>Leadership</li>
+        {% for skill in analysis.soft_skills %}
+        <li>{{ skill }}</li>
+        {% else %}
+        <li>None detected</li>
+        {% endfor %}
       </ul>
     </div>
 
@@ -42,9 +51,11 @@ block content %}
       <h2>Missing Skills</h2>
 
       <ul>
-        <li>Docker</li>
-        <li>AWS</li>
-        <li>REST API</li>
+        {% for skill in analysis.missing_skills %}
+        <li>{{ skill }}</li>
+        {% else %}
+        <li>None detected</li>
+        {% endfor %}
       </ul>
     </div>
 
@@ -52,9 +63,11 @@ block content %}
       <h2>Strengths</h2>
 
       <ul>
-        <li>Good Project Experience</li>
-        <li>Clean Resume Format</li>
-        <li>Strong Programming Skills</li>
+        {% for strength in analysis.strengths %}
+        <li>{{ strength }}</li>
+        {% else %}
+        <li>None detected</li>
+        {% endfor %}
       </ul>
     </div>
 
@@ -62,8 +75,11 @@ block content %}
       <h2>Weaknesses</h2>
 
       <ul>
-        <li>No Certifications</li>
-        <li>Few Achievements</li>
+        {% for weakness in analysis.weaknesses %}
+        <li>{{ weakness }}</li>
+        {% else %}
+        <li>None detected</li>
+        {% endfor %}
       </ul>
     </div>
 
@@ -71,9 +87,11 @@ block content %}
       <h2>Suggestions</h2>
 
       <ul>
-        <li>Add measurable achievements.</li>
-        <li>Improve professional summary.</li>
-        <li>Add internship experience.</li>
+        {% for suggestion in analysis.suggestions %}
+        <li>{{ suggestion }}</li>
+        {% else %}
+        <li>None detected</li>
+        {% endfor %}
       </ul>
     </div>
   </div>
@@ -82,14 +100,12 @@ block content %}
     <h2>Professional Summary</h2>
 
     <p>
-      This resume demonstrates strong backend development skills with Python and
-      Flask. Adding certifications, Docker knowledge, and measurable
-      achievements will significantly improve the ATS score.
+      {{ analysis.summary }}
     </p>
   </div>
 
   <div class="download-section">
-    <a href="/download-report" class="download-btn"> Download PDF Report </a>
+    <a href="{{ download_url }}" class="download-btn"> Download PDF Report </a>
   </div>
 </section>
 

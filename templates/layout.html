@@ -27,6 +27,13 @@
   </head>
 
   <body>
+    <!-- Loading Screen Overlay -->
+    <div id="loadingScreen" class="hidden">
+      <div class="spinner"></div>
+      <h3 class="loading-text">Analyzing Your Resume</h3>
+      <p class="loading-subtext">Our AI is extracting skills and scanning for ATS compatibility...</p>
+    </div>
+
     <!-- Floating Background -->
 
     <div class="background">
@@ -46,6 +53,8 @@
 
           <h2>Resume Analyzer</h2>
         </div>
+
+        {% block nav_right %}{% endblock %}
       </nav>
     </header>
 
