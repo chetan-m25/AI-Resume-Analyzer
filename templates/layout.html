@@ -1,68 +1,70 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>{% block title %}AI Resume Analyzer{% endblock %}</title>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-
     <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
 
-    <!-- Favicon (Optional) -->
-    <!--
-    <link rel="icon" href="{{ url_for('static', filename='images/logo.png') }}">
-    -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-</head>
-<body>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-    <!-- Background Animation -->
-    <div class="background"></div>
+    <!-- CSS -->
 
-    <!-- Header -->
-    <header class="navbar">
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
 
+  <body>
+    <!-- Floating Background -->
+
+    <div class="background">
+      <span class="circle one"></span>
+
+      <span class="circle two"></span>
+
+      <span class="circle three"></span>
+    </div>
+
+    <!-- Navbar -->
+
+    <header>
+      <nav class="navbar">
         <div class="logo">
+          <div class="logo-box">AI</div>
 
-            <span class="logo-icon">📄</span>
-
-            <h2>AI Resume Analyzer</h2>
-
+          <h2>Resume Analyzer</h2>
         </div>
-
+      </nav>
     </header>
 
+    <!-- Main -->
 
-    <!-- Main Content -->
-    <main>
-
-        {% block content %}
-
-        {% endblock %}
-
-    </main>
-
+    <main>{% block content %} {% endblock %}</main>
 
     <!-- Footer -->
+
     <footer>
+      <div class="footer-content">
+        <h3>AI Resume Analyzer</h3>
 
-        <p>
-            © 2026 AI Resume Analyzer | Built by
-            <strong>Chetan</strong> & <strong>Rajkumar</strong>
-        </p>
+        <p>Built with Python • Flask • Gemini AI</p>
 
+        <small> Developed by Chetan & Rajkumar </small>
+      </div>
     </footer>
 
-
-    <!-- JavaScript -->
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-
-</body>
+  </body>
 </html>
